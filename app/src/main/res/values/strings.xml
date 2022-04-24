@@ -6,4 +6,5 @@
     <string name="et_nomArticle">Saisir le nom de l\'article</string>
     <string name="et_quantiteArticle">1</string>
     <string name="btn_enregistrer">Enregistrer</string>
+    <string name="reinitialiser">Réinitialiser</string>
 </resources>

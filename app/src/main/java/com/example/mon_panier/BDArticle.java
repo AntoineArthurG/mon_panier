@@ -5,6 +5,8 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import java.util.ArrayList;
+
 public class BDArticle {
 
     private final static String SELECT_ALL = "SELECT * FROM articles;";
@@ -13,7 +15,7 @@ public class BDArticle {
     private MaBaseSQLite maBaseSQLite;
 
     public BDArticle (Context context) {
-        maBaseSQLite = new MaBaseSQLite(context, "articles", null, 1);
+        maBaseSQLite = new MaBaseSQLite(context, "mon_panier", null, 1);
     }
 
     public void open () {
@@ -30,6 +32,7 @@ public class BDArticle {
 
     public long insertArticle(Article article){
         ContentValues values = new ContentValues();
+        //values.put("id", article.getId());
         values.put("nom", article.getNom());
         values.put("quantite", article.getQte());
 
@@ -37,24 +40,36 @@ public class BDArticle {
 
     }
 
-    public Article getAll(){
+    public ArrayList<Article> getAll(){
         Cursor cursor = bdd.rawQuery(SELECT_ALL, null);
 
         return cursorToArticle(cursor);
     }
 
-    public Article cursorToArticle(Cursor cursor){
+    public ArrayList<Article> cursorToArticle(Cursor cursor){
+        ArrayList<Article> listeArticle = new ArrayList<>();
+
         if (cursor.getCount() == 0){
-            return null;
+            return listeArticle;
         }
 
         cursor.moveToFirst();
 
-        Article article = new Article();
-        article.setId(cursor.getInt(0));
-        article.setNom(cursor.getString(1));
-        article.setQte(cursor.getString(2));
+        //Article article = new Article();
+//        article.setId(cursor.getInt(0));
+//        article.setNom(cursor.getString(1));
+//        article.setQte(cursor.getString(2));
 
-        return article;
+
+        for (int i = 0; i < cursor.getCount(); i++) {
+            Article article = new Article();
+            article.setId(cursor.getInt(0));
+            article.setNom(cursor.getString(1));
+            article.setQte(cursor.getString(2));
+            listeArticle.add(article);
+            cursor.moveToNext();
+        }
+
+        return listeArticle;
     }
 }

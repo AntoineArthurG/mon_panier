@@ -9,7 +9,7 @@ import androidx.annotation.Nullable;
 public class MaBaseSQLite extends SQLiteOpenHelper {
 
     private final static String CREATE_TABLE = "CREATE TABLE IF NOT EXISTS articles (" +
-            "id int PRIMARY KEY," +
+            "id integer PRIMARY KEY AUTOINCREMENT," +
             "nom VARCHAR(50) not null," +
             "quantite int not null" +
             ");";

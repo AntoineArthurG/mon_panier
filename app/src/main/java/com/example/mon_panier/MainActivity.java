@@ -3,10 +3,13 @@ package com.example.mon_panier;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,6 +35,23 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        /*
+            Réinitialiser la liste
+         */
+        Button reinitialiser = findViewById(R.id.btn_reinitialiser);
+        reinitialiser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                bdArticle.open();
+                bdArticle.getBdd().execSQL("delete from articles ;");
+                bdArticle.close();
+
+                // refresh
+                finish();
+                startActivity(getIntent());
+            }
+        });
     }
 
     public void afficher (){
@@ -40,12 +60,21 @@ public class MainActivity extends AppCompatActivity {
 
         bdArticle.open();
 
-        Article article = bdArticle.getAll();
+        ArrayList<Article> listeArticle = bdArticle.getAll();
 
         bdArticle.close();
 
-        tv_nom.setText(article.getNom());
-        tv_qte.setText(article.getQte());
+        if (!listeArticle.isEmpty()) {
+            for (int i = 0; i < listeArticle.size(); i++) {
+                tv_nom.setText(listeArticle.get(i).getNom());
+                tv_qte.setText(listeArticle.get(i).getQte());
+            }
+        } else {
+            tv_nom.setText("vide");
+            tv_qte.setText("vide");
+        }
+
+
 
 
     }

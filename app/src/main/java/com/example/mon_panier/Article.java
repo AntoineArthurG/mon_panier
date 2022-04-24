@@ -17,10 +17,10 @@ public class Article {
     }
 
     public Article(String nom, String qte){
-        this.id = num;
+        //this.id = num;
         this.nom = nom;
         this.qte = qte;
-        this.num++;
+        //this.num++;
     }
 
     public int getNum() {
