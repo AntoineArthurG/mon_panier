@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">mon_panier</string>
+    <string name="add">Ajouter un article</string>
+    <string name="nomArticle">Nom</string>
+    <string name="quantiteArticle">Quantité</string>
+    <string name="et_nomArticle">Saisir le nom de l\'article</string>
+    <string name="et_quantiteArticle">1</string>
+    <string name="btn_enregistrer">Enregistrer</string>
+    <string name="reinitialiser">Réinitialiser</string>
 </resources>
