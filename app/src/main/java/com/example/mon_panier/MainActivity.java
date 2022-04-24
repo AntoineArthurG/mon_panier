@@ -1,6 +1,8 @@
 package com.example.mon_panier;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
@@ -21,8 +23,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         bdArticle = new BDArticle(this);
-        afficher();
+        bdArticle.open();
+        ArrayList<Article> listeArticle = bdArticle.getAll();
+        bdArticle.close();
 
+        RecyclerView recyclerView = findViewById(R.id.rv_listeArticle);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(new ArticleAdapter(getApplicationContext(), listeArticle));
+
+
+        afficher();
 
         /*
             Ajouter un article
