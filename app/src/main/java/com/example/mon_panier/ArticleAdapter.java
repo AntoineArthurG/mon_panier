@@ -29,6 +29,7 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleViewHolder> {
     public void onBindViewHolder(@NonNull ArticleViewHolder holder, int position) {
         holder.nom_article.setText(listeArticle.get(position).getNom());
         holder.qte_article.setText(listeArticle.get(position).getQte());
+        holder.description_article.setText(listeArticle.get(position).getDescription());
     }
 
     @Override

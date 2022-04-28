@@ -25,26 +25,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_ajouter" />
 
-    <TextView
-        android:id="@+id/nom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rv_listeArticle" />
-
-    <TextView
-        android:id="@+id/qte"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
-        android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/nom"
-        app:layout_constraintTop_toBottomOf="@+id/rv_listeArticle" />
-
     <Button
         android:id="@+id/btn_reinitialiser"
         android:layout_width="wrap_content"

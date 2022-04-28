@@ -31,9 +31,6 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(new ArticleAdapter(getApplicationContext(), listeArticle));
 
-
-        afficher();
-
         /*
             Ajouter un article
          */
@@ -62,30 +59,5 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(getIntent());
             }
         });
-    }
-
-    public void afficher (){
-        TextView tv_nom = findViewById(R.id.nom);
-        TextView tv_qte = findViewById(R.id.qte);
-
-        bdArticle.open();
-
-        ArrayList<Article> listeArticle = bdArticle.getAll();
-
-        bdArticle.close();
-
-        if (!listeArticle.isEmpty()) {
-            for (int i = 0; i < listeArticle.size(); i++) {
-                tv_nom.setText(listeArticle.get(i).getNom());
-                tv_qte.setText(listeArticle.get(i).getQte());
-            }
-        } else {
-            tv_nom.setText("vide");
-            tv_qte.setText("vide");
-        }
-
-
-
-
     }
 }

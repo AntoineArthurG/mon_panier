@@ -6,6 +6,7 @@ public class Article {
     private int id;
     private String nom;
     private String qte;
+    private String description;
 
     public Article(){}
 
@@ -16,11 +17,10 @@ public class Article {
         this.num++;
     }
 
-    public Article(String nom, String qte){
-        //this.id = num;
+    public Article(String nom, String qte, String description){
         this.nom = nom;
         this.qte = qte;
-        //this.num++;
+        this.description = description;
     }
 
     public int getNum() {
@@ -53,6 +53,14 @@ public class Article {
 
     public void setQte(String qte) {
         this.qte = qte;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
 

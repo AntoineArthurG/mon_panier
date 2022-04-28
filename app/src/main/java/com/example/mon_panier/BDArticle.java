@@ -32,9 +32,9 @@ public class BDArticle {
 
     public long insertArticle(Article article){
         ContentValues values = new ContentValues();
-        //values.put("id", article.getId());
         values.put("nom", article.getNom());
         values.put("quantite", article.getQte());
+        values.put("description", article.getDescription());
 
         return bdd.insert("articles", null, values);
 
@@ -66,6 +66,7 @@ public class BDArticle {
             article.setId(cursor.getInt(0));
             article.setNom(cursor.getString(1));
             article.setQte(cursor.getString(2));
+            article.setDescription(cursor.getString(3));
             listeArticle.add(article);
             cursor.moveToNext();
         }
