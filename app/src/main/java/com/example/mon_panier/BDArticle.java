@@ -10,7 +10,6 @@ import java.util.ArrayList;
 public class BDArticle {
 
     private final static String SELECT_ALL = "SELECT * FROM articles;";
-
     private SQLiteDatabase bdd ;
     private MaBaseSQLite maBaseSQLite;
 
@@ -35,6 +34,7 @@ public class BDArticle {
         //values.put("id", article.getId());
         values.put("nom", article.getNom());
         values.put("quantite", article.getQte());
+        //values.put("description", article.getDescri());
 
         return bdd.insert("articles", null, values);
 
@@ -59,7 +59,6 @@ public class BDArticle {
 //        article.setId(cursor.getInt(0));
 //        article.setNom(cursor.getString(1));
 //        article.setQte(cursor.getString(2));
-
 
         for (int i = 0; i < cursor.getCount(); i++) {
             Article article = new Article();

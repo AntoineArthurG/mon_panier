@@ -1,5 +1,8 @@
 package com.example.mon_panier;
 
+/*
+    Classe Article composé d'attributs.
+ */
 public class Article {
 
     private int num = 0;
@@ -54,5 +57,10 @@ public class Article {
     public void setQte(String qte) {
         this.qte = qte;
     }
+
+    //public String getDescri() { return descri;}
+    //public void setDescri(String descri) {this.descri = descri;}
+
+
 }
 

@@ -3,7 +3,6 @@ package com.example.mon_panier;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -31,11 +30,10 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(new ArticleAdapter(getApplicationContext(), listeArticle));
 
-
         afficher();
 
         /*
-            Ajouter un article
+            Ajouter un article à la liste de courses.
          */
         Button ajouter = findViewById(R.id.btn_ajouter);
         ajouter.setOnClickListener(new View.OnClickListener() {
@@ -47,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         /*
-            Réinitialiser la liste
+            Réinitialiser la liste.
          */
         Button reinitialiser = findViewById(R.id.btn_reinitialiser);
         reinitialiser.setOnClickListener(new View.OnClickListener() {
@@ -64,9 +62,13 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /*
+        Afficher la liste des courses.
+     */
     public void afficher (){
         TextView tv_nom = findViewById(R.id.nom);
         TextView tv_qte = findViewById(R.id.qte);
+        //TextView tv_descri = findViewById(R.id.description);
 
         bdArticle.open();
 
@@ -78,10 +80,13 @@ public class MainActivity extends AppCompatActivity {
             for (int i = 0; i < listeArticle.size(); i++) {
                 tv_nom.setText(listeArticle.get(i).getNom());
                 tv_qte.setText(listeArticle.get(i).getQte());
+                //tv_descri.setText(listeArticle.get(i).getDescri());
             }
         } else {
             tv_nom.setText("vide");
             tv_qte.setText("vide");
+            //tv_descri.setText("vide");
+
         }
 
 

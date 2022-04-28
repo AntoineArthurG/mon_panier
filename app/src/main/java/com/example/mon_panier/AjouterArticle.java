@@ -28,7 +28,6 @@ public class AjouterArticle extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 ajouter_article();
-
                 Intent mainActivity = new Intent(AjouterArticle.this, MainActivity.class);
                 startActivity(mainActivity);
             }
@@ -36,12 +35,16 @@ public class AjouterArticle extends AppCompatActivity {
 
     }
 
+    /*
+        Ajouter un article à la base de donnée
+     */
     public void ajouter_article(){
-
         EditText et_nom = findViewById(R.id.et_nomArticle);
         EditText et_qte = findViewById(R.id.et_quantiteArticle);
+        EditText et_descri = findViewById(R.id.et_descriptionArticle);
         String nom = et_nom.getText().toString();
         String qte = et_qte.getText().toString();
+        //String descri = et_descri.getText().toString();
 
         Article article = new Article(nom, qte);
 
@@ -49,7 +52,7 @@ public class AjouterArticle extends AppCompatActivity {
         bdArticle.insertArticle(article);
         bdArticle.close();
 
-        Toast.makeText(this,"Article enregistrer!", Toast.LENGTH_LONG).show();
+        Toast.makeText(this,"Article enregistré !", Toast.LENGTH_LONG).show();
 
     }
 }
