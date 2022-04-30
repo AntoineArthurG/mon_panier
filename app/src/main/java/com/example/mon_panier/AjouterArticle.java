@@ -82,14 +82,4 @@ public class AjouterArticle extends AppCompatActivity {
         Toast.makeText(this,"Article enregistrer!", Toast.LENGTH_LONG).show();
 
     }
-
-//    @Override
-//    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-//        categorie = adapterView.getItemAtPosition(i).toString();
-//    }
-//
-//    @Override
-//    public void onNothingSelected(AdapterView<?> adapterView) {
-//
-//    }
 }
