@@ -12,12 +12,8 @@ public class MaBaseSQLite extends SQLiteOpenHelper {
             "id integer PRIMARY KEY AUTOINCREMENT," +
             "nom VARCHAR(50) not null," +
             "quantite int not null," +
+            "categorie VARCHAR(50)," +
             "description VARCHAR(250) not null" +
-            ");";
-
-    private final static String CREATE_TABLE_CATEGORIE = "CREATE TABLE IF NOT EXISTS categories (" +
-            "id integer PRIMARY KEY AUTOINCREMENT," +
-            "nomCategorie VARCHAR(50) not null" +
             ");";
 
     public MaBaseSQLite(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
@@ -27,7 +23,6 @@ public class MaBaseSQLite extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL(CREATE_TABLE_ARTICLE);
-        sqLiteDatabase.execSQL(CREATE_TABLE_CATEGORIE);
     }
 
     @Override

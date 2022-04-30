@@ -34,7 +34,9 @@ public class BDArticle {
         ContentValues values = new ContentValues();
         values.put("nom", article.getNom());
         values.put("quantite", article.getQte());
+        values.put("categorie", article.getCategorie());
         values.put("description", article.getDescription());
+
 
         return bdd.insert("articles", null, values);
 
@@ -55,18 +57,14 @@ public class BDArticle {
 
         cursor.moveToFirst();
 
-        //Article article = new Article();
-//        article.setId(cursor.getInt(0));
-//        article.setNom(cursor.getString(1));
-//        article.setQte(cursor.getString(2));
-
-
         for (int i = 0; i < cursor.getCount(); i++) {
             Article article = new Article();
             article.setId(cursor.getInt(0));
             article.setNom(cursor.getString(1));
             article.setQte(cursor.getString(2));
-            article.setDescription(cursor.getString(3));
+            article.setCategorie(cursor.getString(3));
+            article.setDescription(cursor.getString(4));
+
             listeArticle.add(article);
             cursor.moveToNext();
         }
