@@ -31,10 +31,10 @@ public class AjouterArticle extends AppCompatActivity {
         enregistrer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ajouter_article();
-
-                Intent mainActivity = new Intent(AjouterArticle.this, MainActivity.class);
-                startActivity(mainActivity);
+                if (ajouter_article()){
+                    Intent mainActivity = new Intent(AjouterArticle.this, MainActivity.class);
+                    startActivity(mainActivity);
+                }
             }
         });
 
@@ -63,7 +63,8 @@ public class AjouterArticle extends AppCompatActivity {
     /*
         Méthode qui permet d'enregistrer un article. Cette méthode est appeler dans le onClickListener du bouton 'AjouterArticle'
      */
-    public void ajouter_article(){
+    public boolean ajouter_article(){
+        Boolean insertReussi = false;
 
         EditText et_nom = findViewById(R.id.et_nomArticle);
         EditText et_qte = findViewById(R.id.et_quantiteArticle);
@@ -74,12 +75,15 @@ public class AjouterArticle extends AppCompatActivity {
 
         Article article = new Article(nom, qte, categorie, description);
 
-
         bdArticle.open();
-        bdArticle.insertArticle(article);
+        insertReussi = bdArticle.insertArticle(article);
         bdArticle.close();
 
-        Toast.makeText(this,"Article enregistrer!", Toast.LENGTH_LONG).show();
-
+        if (insertReussi) {
+            Toast.makeText(this,"Article enregistré !", Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(this,"Veuillez saisir un nom d'article !", Toast.LENGTH_LONG).show();
+        }
+        return insertReussi;
     }
 }

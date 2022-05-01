@@ -11,6 +11,7 @@
     <string name="reinitialiser">Réinitialiser</string>
     <string name="tv_categorie">Catégorie</string>
     <string-array name="listeCategorie">
+        <item> </item>
         <item>Épicerie salée</item>
         <item>Épicerie sucrée</item>
         <item>Petit déjeuner</item>

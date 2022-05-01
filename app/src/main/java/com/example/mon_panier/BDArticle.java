@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -30,16 +31,18 @@ public class BDArticle {
         return bdd;
     }
 
-    public long insertArticle(Article article){
-        ContentValues values = new ContentValues();
-        values.put("nom", article.getNom());
-        values.put("quantite", article.getQte());
-        values.put("categorie", article.getCategorie());
-        values.put("description", article.getDescription());
-
-
-        return bdd.insert("articles", null, values);
-
+    public boolean insertArticle(Article article){
+        if (article.getNom().equals("")) {
+            return false;
+        } else {
+            ContentValues values = new ContentValues();
+            values.put("nom", article.getNom());
+            values.put("quantite", article.getQte());
+            values.put("categorie", article.getCategorie());
+            values.put("description", article.getDescription());
+            bdd.insert("articles", null, values);
+            return true;
+        }
     }
 
     public ArrayList<Article> getAll(){
