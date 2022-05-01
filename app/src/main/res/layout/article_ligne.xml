@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="10dp">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginTop="10dp"
+    tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/nom_article"
@@ -11,7 +13,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:textSize="15sp"
-        android:textColor="@color/white"
         android:text=""
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -21,15 +22,31 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:textSize="15sp"
-        android:textColor="@color/white"
         android:text=""
         app:layout_constraintStart_toEndOf="@+id/nom_article" />
+
+    <TextView
+        android:id="@+id/categorie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toStartOf="@id/qte_article" />
+
+    <TextView
+        android:id="@+id/description_article"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text=""
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@id/categorie" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="2dp"
+        android:layout_marginTop="5dp"
         android:background="@color/white"
-        app:layout_constraintTop_toBottomOf="@id/nom_article">
+        app:layout_constraintTop_toBottomOf="@id/description_article">
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

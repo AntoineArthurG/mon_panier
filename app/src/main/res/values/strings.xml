@@ -3,8 +3,24 @@
     <string name="add">Ajouter un article</string>
     <string name="nomArticle">Nom</string>
     <string name="quantiteArticle">Quantité</string>
+    <string name="descriptionArticle">Description</string>
     <string name="et_nomArticle">Saisir le nom de l\'article</string>
     <string name="et_quantiteArticle">1</string>
+    <string name="et_descriptionArticle">Saisir une description</string>
     <string name="btn_enregistrer">Enregistrer</string>
     <string name="reinitialiser">Réinitialiser</string>
+    <string name="tv_categorie">Catégorie</string>
+    <string-array name="listeCategorie">
+        <item> </item>
+        <item>Épicerie salée</item>
+        <item>Épicerie sucrée</item>
+        <item>Petit déjeuner</item>
+        <item>Diététique</item>
+        <item>Boissons</item>
+        <item>Univers bébé</item>
+        <item>Produit frais</item>
+        <item>Animaux</item>
+        <item>Entretien</item>
+        <item>Hygiène et beauté</item>
+    </string-array>
 </resources>

@@ -8,10 +8,12 @@ import androidx.annotation.Nullable;
 
 public class MaBaseSQLite extends SQLiteOpenHelper {
 
-    private final static String CREATE_TABLE = "CREATE TABLE IF NOT EXISTS articles (" +
+    private final static String CREATE_TABLE_ARTICLE = "CREATE TABLE IF NOT EXISTS articles (" +
             "id integer PRIMARY KEY AUTOINCREMENT," +
-            "nom VARCHAR(50) not null," +
-            "quantite int not null" +
+            "nom VARCHAR(50) not null unique," +
+            "quantite int," +
+            "categorie VARCHAR(50)," +
+            "description VARCHAR(250)" +
             ");";
 
     public MaBaseSQLite(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
@@ -20,7 +22,7 @@ public class MaBaseSQLite extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL(CREATE_TABLE);
+        sqLiteDatabase.execSQL(CREATE_TABLE_ARTICLE);
     }
 
     @Override
