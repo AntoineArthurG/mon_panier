@@ -69,7 +69,7 @@ public class AjouterArticle extends AppCompatActivity {
         EditText et_nom = findViewById(R.id.et_nomArticle);
         EditText et_qte = findViewById(R.id.et_quantiteArticle);
         EditText et_description = findViewById(R.id.et_descriptionArticle);
-        String nom = et_nom.getText().toString();
+        String nom = et_nom.getText().toString().toLowerCase();
         String qte = et_qte.getText().toString();
         String description = et_description.getText().toString();
 
