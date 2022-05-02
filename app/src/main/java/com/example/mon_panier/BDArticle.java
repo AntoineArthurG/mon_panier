@@ -3,8 +3,12 @@ package com.example.mon_panier;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteConstraintException;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 import android.widget.Toast;
+
+import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 
@@ -32,17 +36,25 @@ public class BDArticle {
     }
 
     public boolean insertArticle(Article article){
-        if (article.getNom().equals("")) {
-            return false;
-        } else {
-            ContentValues values = new ContentValues();
-            values.put("nom", article.getNom());
-            values.put("quantite", article.getQte());
-            values.put("categorie", article.getCategorie());
-            values.put("description", article.getDescription());
-            bdd.insert("articles", null, values);
-            return true;
+
+        boolean res;
+
+        ContentValues values = new ContentValues();
+        values.put("nom", article.getNom());
+        values.put("quantite", article.getQte());
+        values.put("categorie", article.getCategorie());
+        values.put("description", article.getDescription());
+
+        try {
+            bdd.insertOrThrow("articles", null, values);
+            res = true;
+        } catch (SQLiteConstraintException e) {
+            res = false;
+
         }
+
+        return res;
+
     }
 
     public ArrayList<Article> getAll(){
