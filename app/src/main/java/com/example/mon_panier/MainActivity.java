@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 bdArticle.open();
-                bdArticle.getBdd().execSQL("delete from articles ;");
+                bdArticle.resetListe();
                 bdArticle.close();
 
                 // refresh
