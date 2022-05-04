@@ -1,6 +1,9 @@
 package com.example.mon_panier;
 
+import android.graphics.Paint;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -13,11 +16,25 @@ public class ArticleViewHolder extends RecyclerView.ViewHolder {
     TextView categorie;
     TextView description_article;
 
+    CheckBox checkBox;
+
     public ArticleViewHolder(@NonNull View itemView) {
         super(itemView);
-        nom_article = itemView.findViewById(R.id.nom_article);
-        qte_article = itemView.findViewById(R.id.qte_article);
-        categorie = itemView.findViewById(R.id.categorie);
-        description_article = itemView.findViewById(R.id.description_article);
+        nom_article = itemView.findViewById(R.id.tv_nomArticle);
+        qte_article = itemView.findViewById(R.id.tv_quantiteArticle);
+        categorie = itemView.findViewById(R.id.tv_categorieArticle);
+        description_article = itemView.findViewById(R.id.tv_descriptionArticle);
+
+        checkBox = itemView.findViewById(R.id.checkBox);
+        checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (checkBox.isChecked()) {
+                    nom_article.setPaintFlags(nom_article.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+                } else if (!checkBox.isChecked()) {
+                    nom_article.setPaintFlags(nom_article.getPaintFlags() & (~ Paint.STRIKE_THRU_TEXT_FLAG));
+                }
+            }
+        });
     }
 }

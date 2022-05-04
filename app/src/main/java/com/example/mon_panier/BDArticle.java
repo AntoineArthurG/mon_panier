@@ -86,4 +86,19 @@ public class BDArticle {
 
         return listeArticle;
     }
+
+    /*
+        Permet de supprimer un article de la liste
+     */
+    public void deleteArticle(Article article) {
+        bdd.rawQuery("DELETE FROM articles WHERE " +
+                "SELECT * " +
+                "FROM articles " +
+                "WHERE id = " + article.getId() + ";",null);
+    }
+
+    public void resetListe (){
+
+        bdd.delete("articles",null,null);
+    }
 }

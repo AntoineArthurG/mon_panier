@@ -31,6 +31,8 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleViewHolder> {
         holder.qte_article.setText(listeArticle.get(position).getQte());
         holder.categorie.setText(listeArticle.get(position).getCategorie());
         holder.description_article.setText(listeArticle.get(position).getDescription());
+
+
     }
 
     @Override

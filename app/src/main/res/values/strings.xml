@@ -10,6 +10,11 @@
     <string name="btn_enregistrer">Enregistrer</string>
     <string name="reinitialiser">Réinitialiser</string>
     <string name="tv_categorie">Catégorie</string>
+    <string name="btn_supprArticle">Supprimer</string>
+    <string name="dialog_message">Êtes vous sûr de vouloir supprimer la liste ?</string>
+    <string name="dialog_title">Réinitialiser</string>
+    <string name="oui">Oui</string>
+    <string name="annuler">Annuler</string>
     <string-array name="listeCategorie">
         <item> </item>
         <item>Épicerie salée</item>
