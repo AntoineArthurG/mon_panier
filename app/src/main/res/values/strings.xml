@@ -10,6 +10,7 @@
     <string name="btn_enregistrer">Enregistrer</string>
     <string name="reinitialiser">Réinitialiser</string>
     <string name="tv_categorie">Catégorie</string>
+    <string name="btn_supprArticle">Supprimer</string>
     <string-array name="listeCategorie">
         <item> </item>
         <item>Épicerie salée</item>

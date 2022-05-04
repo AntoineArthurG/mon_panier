@@ -15,9 +15,9 @@ public class ArticleViewHolder extends RecyclerView.ViewHolder {
 
     public ArticleViewHolder(@NonNull View itemView) {
         super(itemView);
-        nom_article = itemView.findViewById(R.id.nom_article);
-        qte_article = itemView.findViewById(R.id.qte_article);
-        categorie = itemView.findViewById(R.id.categorie);
-        description_article = itemView.findViewById(R.id.description_article);
+        nom_article = itemView.findViewById(R.id.tv_nomArticle);
+        qte_article = itemView.findViewById(R.id.tv_quantiteArticle);
+        categorie = itemView.findViewById(R.id.tv_categorieArticle);
+        description_article = itemView.findViewById(R.id.tv_descriptionArticle);
     }
 }
