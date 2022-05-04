@@ -25,6 +25,44 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_ajouter" />
 
+    <LinearLayout
+        android:id="@+id/titre_colonne"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/tv_listeCourse">
+
+        <TextView
+            android:id="@+id/ll_nom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/nomArticle" />
+
+        <TextView
+            android:id="@+id/ll_qteArticle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/quantiteArticle" />
+
+        <TextView
+            android:id="@+id/ll_categorie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/tv_categorie" />
+
+        <TextView
+            android:id="@+id/ll_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/descriptionArticle" />
+
+    </LinearLayout>
+
     <Button
         android:id="@+id/btn_reinitialiser"
         android:layout_width="wrap_content"

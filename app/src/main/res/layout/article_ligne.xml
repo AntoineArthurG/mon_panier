@@ -13,7 +13,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:textSize="15sp"
-        android:text=""
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -22,7 +21,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:textSize="15sp"
-        android:text=""
         app:layout_constraintStart_toEndOf="@+id/nom_article" />
 
     <TextView
@@ -30,14 +28,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        app:layout_constraintStart_toStartOf="@id/qte_article" />
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@id/qte_article" />
 
     <TextView
         android:id="@+id/description_article"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:text=""
         android:textSize="15sp"
         app:layout_constraintStart_toEndOf="@id/categorie" />
 
