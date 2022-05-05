@@ -75,12 +75,15 @@ public class AjouterArticle extends AppCompatActivity {
         EditText et_nom = findViewById(R.id.et_nomArticle);
         EditText et_qte = findViewById(R.id.et_quantiteArticle);
         EditText et_description = findViewById(R.id.et_descriptionArticle);
-        String nom = et_nom.getText().toString().toLowerCase();
-        String nomSansEspace = nom.trim();
+        String nom = et_nom.getText().toString();
         String qte = et_qte.getText().toString();
         String description = et_description.getText().toString();
 
-        Article article = new Article(nomSansEspace, qte, categorie, description);
+        // Formattage du nom d'article avant enregistrement en base
+        String nomArticle = nom.trim();
+        String nomFinal = nomArticle.substring(0, 1).toUpperCase() + nomArticle.substring(1);
+
+        Article article = new Article(nomFinal, qte, categorie, description);
 
         bdArticle.open();
         insertReussi = bdArticle.insertArticle(article);
