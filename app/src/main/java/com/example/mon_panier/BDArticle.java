@@ -91,10 +91,7 @@ public class BDArticle {
         Permet de supprimer un article de la liste
      */
     public void deleteArticle(Article article) {
-        bdd.rawQuery("DELETE FROM articles WHERE " +
-                "SELECT * " +
-                "FROM articles " +
-                "WHERE id = " + article.getId() + ";",null);
+        bdd.delete("articles", "id = " + article.getId(), null);
     }
 
     public void resetListe (){
