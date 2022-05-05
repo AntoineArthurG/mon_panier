@@ -45,7 +45,8 @@
         android:layout_marginEnd="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_listeCourse" >
+        app:layout_constraintTop_toBottomOf="@+id/tv_listeCourse"
+        android:paddingBottom="200dp">
 
     </androidx.recyclerview.widget.RecyclerView>
 
