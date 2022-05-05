@@ -26,7 +26,7 @@ public class ArticleViewHolder extends RecyclerView.ViewHolder {
         qte_article = itemView.findViewById(R.id.tv_quantiteArticle);
         categorie = itemView.findViewById(R.id.tv_categorieArticle);
         description_article = itemView.findViewById(R.id.tv_descriptionArticle);
-        btn_supprimer = itemView.findViewById(R.id.btn_supprArticle);
+        btn_supprimer = itemView.findViewById(R.id.btn_supprimer);
         checkBox = itemView.findViewById(R.id.checkBox);
     }
 }
