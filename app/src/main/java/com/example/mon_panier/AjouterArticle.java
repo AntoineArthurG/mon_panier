@@ -76,7 +76,7 @@ public class AjouterArticle extends AppCompatActivity {
         EditText et_qte = findViewById(R.id.et_quantiteArticle);
         EditText et_description = findViewById(R.id.et_descriptionArticle);
         String nom = et_nom.getText().toString();
-        String qte = "x " + et_qte.getText().toString();
+        String qte = et_qte.getText().toString();
         String description = et_description.getText().toString();
 
         // Formattage du nom d'article avant enregistrement en base
