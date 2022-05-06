@@ -57,6 +57,9 @@ public class BDArticle {
 
     }
 
+    /*
+        Méthode permettant de récupérer tout les article stockés en base de données
+     */
     public ArrayList<Article> getAll(){
         Cursor cursor = bdd.rawQuery(SELECT_ALL, null);
 
@@ -88,12 +91,15 @@ public class BDArticle {
     }
 
     /*
-        Permet de supprimer un article de la liste
+        Permet de supprimer un seul article de la liste grace a son id
      */
     public void deleteArticle(Article article) {
         bdd.delete("articles", "id = " + article.getId(), null);
     }
 
+    /*
+        Méthode permettant de réinitialiser la liste de l'utilisateur si il le veut
+     */
     public void resetListe (){
 
         bdd.delete("articles",null,null);

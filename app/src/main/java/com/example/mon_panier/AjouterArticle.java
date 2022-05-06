@@ -44,7 +44,7 @@ public class AjouterArticle extends AppCompatActivity {
         });
 
         /*
-            Alimente le spinner de catégorie avec les valeurs fourni dans le string-array 'listeCategorie' du fichier ressource strings.xml
+            Alimente le Spinner de catégorie avec les valeurs fourni dans le string-array 'listeCategorie' du fichier ressource strings.xml
          */
         Spinner spinner = findViewById(R.id.categorie_spinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.listeCategorie, android.R.layout.simple_spinner_item);

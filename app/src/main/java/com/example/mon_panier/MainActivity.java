@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // On récupère les articles en base dans une liste pour alimenter le RecyclerView
         bdArticle = new BDArticle(this);
         bdArticle.open();
         ArrayList<Article> listeArticle = bdArticle.getAll();
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(new ArticleAdapter(getApplicationContext(), listeArticle));
 
         /*
-            Ajouter un article
+            Bouton ajouter un article
          */
         Button ajouter = findViewById(R.id.btn_ajouter);
         ajouter.setOnClickListener(new View.OnClickListener() {
@@ -47,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         /*
-            Réinitialiser la liste
+            Bouton réinitialiser la liste
          */
         Button reinitialiser = findViewById(R.id.btn_reinitialiser);
         reinitialiser.setOnClickListener(new View.OnClickListener() {
